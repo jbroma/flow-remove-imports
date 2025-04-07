@@ -16,20 +16,20 @@ node index.js
 
 ## Results
 
-```
-Case 1 - removing type only imports:
+```js
+Case 1 - "removing type only imports":
 Input                      [37]:  import { type x } from 'some-module';
 Output - Babel             [37]:  import { type x } from 'some-module';
 Output - Babel Strip Types [0]:
 Output - Flow Strip Types  [37]:  import {        } from 'some-module';
 
-Case 2 - preserving empty import:
+Case 2 - "preserving empty import":
 Input                      [29]:  import {} from 'some-module';
 Output - Babel             [21]:  import 'some-module';
 Output - Babel Strip Types [21]:  import 'some-module';
 Output - Flow Strip Types  [29]:  import {} from 'some-module';
 
-Case 3 - mixed with DefaultImport:
+Case 3 - "mixed with default import":
 Input                      [52]:  import DefaultImport, { type x } from 'some-module';
 Output - Babel             [52]:  import DefaultImport, { type x } from 'some-module';
 Output - Babel Strip Types [40]:  import DefaultImport from 'some-module';
