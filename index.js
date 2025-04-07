@@ -5,16 +5,28 @@ const flowRemoveTypes = require('flow-remove-types');
 // Test cases for different import scenarios
 const testCases = [
   {
-    name: 'removing type only imports',
+    name: `"removing type only imports"`,
     code: `import { type x } from 'some-module';`,
   },
   {
-    name: 'preserving empty import',
+    name: `"mixed type and non-type imports"`,
+    code: `import { type x, y } from 'some-module';`,
+  },
+  {
+    name: `"preserving empty import"`,
     code: `import {} from 'some-module';`,
   },
   {
-    name: 'mixed with DefaultImport',
+    name: `"mixed with DefaultImport"`,
     code: `import DefaultImport, { type x } from 'some-module';`,
+  },
+  {
+    name: `"mixed with DefaultImport - type"`,
+    code: `import type DefaultImport, { type x } from 'some-module';`,
+  },
+  {
+    name: `"mixed with DefaultImport - typeof"`,
+    code: `import typeof DefaultImport, { type x } from 'some-module';`,
   },
 ];
 
