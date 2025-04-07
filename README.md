@@ -1,6 +1,6 @@
 # flow-remove-imports
 
-A tool for testing and comparing different methods of removing Flow type imports from JavaScript code.
+A tool for comparing behaviour of babel and flow-remove-types when removing type imports.
 
 ## Installation
 
